@@ -1,0 +1,14 @@
+
+{% extends "templates/index.html" %}
+
+{% block maincontent %}
+<p>I am welcome to questions, comments, poems, stories</p>
+<p>{{msg}}</p>
+<form method="post" action="/contact">
+	<label> Name:<input type="text" name="username" value="Gomez"></label>
+	<label> Email Address:<input type="text" name="useremail" value="gomez_addams@kookyspooky.com"></label>
+	<label> Subject:<input type="text" name="messagesubj" value="Meeting with Fester"></label>
+	<label> Message:<input type="text" name="messagetext" value="12am. The Mansion."></label>
+	<input type="submit" value="Send Email">
+</form>
+{% endblock %}

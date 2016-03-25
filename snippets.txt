@@ -1,0 +1,57 @@
+body {
+    color: rgba(0, 0, 0, 0.1);
+}
+
+::selection {
+    color: rgba(0, 0, 0, 1);
+}
+
+
+http://stackoverflow.com/questions/4949129/page-navigation-wont-stay-on-one-line ----table
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+div.background {
+  background: url(klematis.jpg) repeat;
+  border: 2px solid black;
+}
+
+div.transbox {
+  margin: 30px;
+  background-color: #ffffff;
+  border: 1px solid black;
+  opacity: 0.60;
+  filter: alpha(opacity=60); /* For IE8 and earlier */
+}
+
+div.transbox p {
+  margin: 5%;
+  font-weight: bold;
+  color: #000000;
+  opacity: 0.1;
+}
+</style>
+</head>
+<body>
+
+<div class="background">
+  <div class="transbox">
+    <p>This is some text that is placed in the transparent box.</p>
+  </div>
+</div>
+
+</body>
+</html>
+
+
+
+http://stackoverflow.com/questions/12997123/print-specific-part-of-webpage
+
+Sidebar
+http://jsfiddle.net/NGLN/qndjW/6/
+http://stackoverflow.com/questions/6887112/scroll-particular-div-contents-with-browsers-main-scrollbar
