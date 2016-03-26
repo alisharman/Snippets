@@ -10,7 +10,7 @@ body {
 http://stackoverflow.com/questions/4949129/page-navigation-wont-stay-on-one-line ----table
 
 
-
+http://stackoverflow.com/questions/29911143/how-can-i-animate-the-drawing-of-text-on-a-web-page---handwriting
 
 <!DOCTYPE html>
 <html>
