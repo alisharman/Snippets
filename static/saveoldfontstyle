@@ -1,0 +1,4 @@
+    src: url('fonts/jrfont/jr.eot?#iefix') format('embedded-opentype'),
+         url('fonts/jrfont/jr.woff') format('woff'),
+         url('fonts/jrfont/jr.ttf') format('truetype'),
+         url('fonts/jrfont/jr.svg#jrhandregular') format('svg');

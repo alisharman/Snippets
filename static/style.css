@@ -2,17 +2,66 @@
 /*src: url(sansation_light.woff);*/
 @font-face {
     font-family: 'jrhandregular';
-    src: url('fonts/jrfont/jr.eot');
-    src: url('fonts/jrfont/jr.eot?#iefix') format('embedded-opentype'),
-         url('fonts/jrfont/jr.woff') format('woff'),
-         url('fonts/jrfont/jr.ttf') format('truetype'),
-         url('fonts/jrfont/jr.svg#jrhandregular') format('svg');
+    src: url('fonts/jrfont/jr.ttf');
     font-weight: normal;
     font-style: normal;
 }
 
 /*opaque background image effect from: https://scotch.io/tutorials/how-to-change-a-css-background-images-opacity*/
 /*image blend effect: http://www.webdesignerdepot.com/2014/07/15-css-blend-modes-that-will-supercharge-your-images/;*/
+
+
+body {
+  font-family: jrhandregular, sans-serif;
+  font-size: 1.8em;
+  color: rgba(0, 0, 0, 0.9);
+}
+
+
+
+.sidebar {
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  overflow:hidden;
+}
+
+.sidebar #teacup {
+  flex-shrink:0;
+  height: 20em;
+}
+
+#images img {
+  display: inline;
+  max-width:20em;
+  max-height:20em;
+  width: auto;
+  height: auto;
+  cursor: pointer; cursor: hand;
+}
+
+.imageContain .text {
+    display: none;
+}
+.imageContain span {
+    position: absolute;
+    display: inline;
+    max-width:20em;
+    max-height:10em;
+    top:0em;
+    color: #ccc;
+    padding: 4px;
+    line-height:22px;
+    background-color: rgba(139,0,139,0.6);
+}
+/*styling for pictures text: http://jsfiddle.net/promatik/SFU4E/ */
+
+
+
+form {
+  display: inline;
+}
+
 
 
 body:before {
@@ -51,52 +100,18 @@ header h2 {
   margin: 0 1em 0 0;
 }
 
-#content1 {
-  clear:both;
-  padding: 0.4em 0.2em 0.4em 0.2em;
-  margin: 0.2em 0 0.2em 0;
-  border:1px solid black;
-  -webkit-column-count: 2;
-  -moz-column-count: 2;
-  /*top right bottom left*/
-}
 
 #maincontent, #subcontent {
   padding: 10px;
   line-height:22px;
-  float:left;
   padding-top:0;
   border:1px solid black;
 }
 
-#maincontent {
-  width:120%;
-}
-
-#subcontent {
-  width:60%;
-  margin-left: 25%;
-}
-
-#content2 {
-  clear:both;
-  padding: 0.4em 0.2em 0.4em 0.2em;
-  margin: 0.2em 0 0.2em 0.2em;
+#resources {
   overflow: hidden;
-  text-align: center;
   border:1px solid black;
 }
-
-
-#links {
-  top:0;
-  padding: 0.4em 0.2em 0.4em 0.2em;
-  margin: 0.2em 0 0.2em 0.2em;
-  border:1px solid black;
-  text-align: left;
-}
-
-
 
 footer {
   clear: both;

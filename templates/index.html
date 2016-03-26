@@ -2,16 +2,19 @@
 <html lang="en">
 
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>{{title}}</title>
-	<script src="http://code.jquery.com/jquery-1.8.3.min.js"></script>
-	<script language="javascript" src="static/jscript.js"></script>
-
-	<link rel="stylesheet" type="text/css" href="static/style.css"/>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="static/style.css"/>
 </head>
 
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+	<script language="javascript" src="static/jscript.js"></script>
+
 	<div id="wrapper">
 
 		<header>
@@ -23,46 +26,55 @@
 			<nav class="menu">
 				<ul>
 					<li><a class="home" href="home" >Home</a></li>
-					<li><a class="think" href="think">Thoughts</a></li>
-					<li><a class="do" href="do">References</a></li>
-					<li><a class="sense" href="sense">Recipes</a></li>
+					<li><a class="learn" href="learn">Learn</a></li>
+					<li><a class="cook" href="cook">SNAX</a></li>
+					<li><a class="think" href="think">Think</a></li>
 				</ul>
 			<label for="navbar-checkbox" class="navbar-handle"></label>
 			</nav>
 		</input>
-	
-		<section id="content1">
-			<div id="maincontent">
-				{% block maincontent %}
-				REPLACE THIS PART WITH THE MAIN CONTENT
-				{% endblock %}
-			</div>
-			<div id="subcontent">
-				{% block subcontent %}
-				REPLACE THIS PART WITH THE SUB CONTENT
-				{% endblock %}
-			</div>				
-		</section>
 
-		<section id="content2">
-			<h3>Resources</h3>
-			 <div class="dropdown">
-			  <button onclick="myFunction()" class="dropbtn">Resources</button>
-			  <div id="myDropdown" class="dropdown-content">
-			  	{% block linklist %}
-			    <a href="#">Link 1</a>
-			    <a href="#">Link 2</a>
-			    <a href="#">Link 3</a>
-			    {% endblock %}
-			  </div>
-			</div>
-	  	</section>
-		
-		<footer>
-			<p>&copy; Made by <a class="contact" href="contact">Ali</a></p>
-		</footer>
+		<div class="container-fixed">
 
-</div>
+					<div class="row">
+						<div id="maincontent" class="col-sm-8">					
+							{% block maincontent %}
+							REPLACE THIS PART WITH THE MAIN CONTENT
+							{% endblock %}
+						</div>
+						<div id="subcontent" class="col-sm-4">
+							{% block subcontent %}
+							REPLACE THIS PART WITH THE SUB CONTENT
+							{% endblock %}
+						</div>
+					</div>
+
+
+				<div class="row">
+					<div id="resources" class="col-xs-12">
+						{% block resources%}
+						<h3>THIS SHOULD NOT BE VISIBLE</h3>
+						 <div class="dropdown">
+						  <button onclick="myFunction()" class="dropbtn">Resources</button>
+						  <div id="myDropdown" class="dropdown-content">
+						  	
+							    <a href="#">Link 1</a>
+							    <a href="#">Link 2</a>
+							    <a href="#">Link 3</a>
+						 
+						  </div>
+						</div>
+						{% endblock %}
+					</div>
+				</div>
+
+	  	</div>
+
+	</div>
+
+	<footer>
+		<p>&copy; <a class="think" href="think">Ali</a></p>
+	</footer>
 	
 </body>
 </html>

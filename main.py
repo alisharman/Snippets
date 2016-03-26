@@ -34,15 +34,15 @@ class MainHandler(webapp2.RequestHandler):
         title=path.title()
         if self.request.path=="/":
             path = "home"
-            title="Home"
+            title = "Home"
 
         template = JINJA_ENVIRONMENT.get_template('templates/%s.html' % (path)) 
         self.response.write(template.render({'title': title}))
 
 class EmailHandler(webapp2.RequestHandler):
     def get(self):
-        template = JINJA_ENVIRONMENT.get_template('templates/contact.html') 
-        self.response.write(template.render({'title': "Contact"}))
+        template = JINJA_ENVIRONMENT.get_template('templates/think.html') 
+        self.response.write(template.render({'title': "Think"}))
 
     def post(self):
         #Read the form input which is a single line as follows
@@ -52,8 +52,8 @@ class EmailHandler(webapp2.RequestHandler):
         messagetext=self.request.get('messagetext')
         if len(re.findall(r".*@.*\.[a-z][a-z][a-z]",useremail))==0:
             logging.info("***EMAIL INVALID***") #log bad attempts
-            msg="Please enter a valid email address. You put: %s" % (useremail)
-            goto = "/contact.html"
+            msg="Please enter a valid email address.You entered: %s" % (useremail)
+            goto = "/think.html"
         else:
             logging.info("***EMAIL SENT***")
             message = mail.EmailMessage()
@@ -62,13 +62,13 @@ class EmailHandler(webapp2.RequestHandler):
             message.subject = "SNIPPETS: "+messagesubj
             message.body = useremail + " ("+username+")\n"+messagetext
             message.send()
-            goto = "/contactpass.html"
+            goto = "/thinkpass.html"
             msg=""
         template = JINJA_ENVIRONMENT.get_template('templates/%s' % (goto))
-        self.response.write(template.render({'msg': msg, 'title': "Contact"}))
+        self.response.write(template.render({'msg': msg, 'title': "Think"}))
 
 app = webapp2.WSGIApplication([
-    ('/contact*', EmailHandler),
+    ('/think*', EmailHandler),
     ('/.*', MainHandler)
 ], debug=True)
 
