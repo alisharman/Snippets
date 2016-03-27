@@ -10,13 +10,13 @@
 {% block subcontent %}
 <h3>The Portal</h2>
 <p>I am welcome to thoughts, questions, poems, recipes, stories</p>
-<p>{{msg}}</p>
+<p id="invalid">{{msg}}</p>
 <form method="post" action="/think">
 	</br><label> Name:<input type="text" name="username" value="Gomez"></label>
 	</br><label> Email Address:<input type="text" name="useremail" value="kookyspookydotcom"></label>
 	</br><label> Subject:<input type="text" name="messagesubj" value="Meeting with Fester"></label>
 	</br><label> Message:<input type="text" name="messagetext" value="12am. The Mansion."></label>
-	</br><input type="submit" value="Send Email">
+	</br><input type="submit" class="button" value="Send Email">
 </form>
 {% endblock %}
 

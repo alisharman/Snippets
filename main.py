@@ -19,6 +19,7 @@ import os, sys
 import logging
 import jinja2
 import re
+from random import randint
 from google.appengine.api import mail
 
 # Lets set it up so we know where we stored the template files
@@ -27,22 +28,23 @@ JINJA_ENVIRONMENT = jinja2.Environment(
     extensions=['jinja2.ext.autoescape'],
     autoescape=True)
 
+
 class MainHandler(webapp2.RequestHandler):
     def get(self):
         #Get path to determine which template to use and to set subtitle
         path = self.request.path.replace("/","")
-        title=path.title()
+        title=path
         if self.request.path=="/":
             path = "home"
-            title = "Home"
-
+            title = "home"
+        #random number from: http://stackoverflow.com/questions/3996904/generate-random-integers-between-0-and-9
         template = JINJA_ENVIRONMENT.get_template('templates/%s.html' % (path)) 
-        self.response.write(template.render({'title': title}))
+        self.response.write(template.render({'title': title, 'random':randint(1,9)}))
 
 class EmailHandler(webapp2.RequestHandler):
     def get(self):
         template = JINJA_ENVIRONMENT.get_template('templates/think.html') 
-        self.response.write(template.render({'title': "Think"}))
+        self.response.write(template.render({'title': "think", 'random':randint(1,10)}))
 
     def post(self):
         #Read the form input which is a single line as follows
@@ -52,7 +54,7 @@ class EmailHandler(webapp2.RequestHandler):
         messagetext=self.request.get('messagetext')
         if len(re.findall(r".*@.*\.[a-z][a-z][a-z]",useremail))==0:
             logging.info("***EMAIL INVALID***") #log bad attempts
-            msg="Please enter a valid email address.You entered: %s" % (useremail)
+            msg="Please enter a valid email address. You entered: %s" % (useremail)
             goto = "/think.html"
         else:
             logging.info("***EMAIL SENT***")
@@ -65,7 +67,7 @@ class EmailHandler(webapp2.RequestHandler):
             goto = "/thinkpass.html"
             msg=""
         template = JINJA_ENVIRONMENT.get_template('templates/%s' % (goto))
-        self.response.write(template.render({'msg': msg, 'title': "Think"}))
+        self.response.write(template.render({'msg': msg, 'title': "think", 'random':randint(1,10)}))
 
 app = webapp2.WSGIApplication([
     ('/think*', EmailHandler),

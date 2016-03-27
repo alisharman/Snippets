@@ -63,7 +63,42 @@ $(document).ready(function () {
     });
      $("#image10 img").click(function () {
         $("#image10 .text").slideToggle();
-    });                             
+    }); 
+
+
+    $("#image1 .text").click(function () {
+        $("#image1 .text").fadeToggle();
+    });
+    $("#image2 .text").click(function () {
+        $("#image2 .text").slideToggle();
+    });
+     $("#image3 .text").click(function () {
+        $("#image3 .text").slideToggle();
+    });
+     $("#image4 .text").click(function () {
+        $("#image4 .text").slideToggle();
+    });
+    $("#image5 .text").click(function () {
+        $("#image5 .text").slideToggle();
+    });
+     $("#image6 .text").click(function () {
+        $("#image6 .text").slideToggle();
+    });
+     $("#image7 .text").click(function () {
+        $("#image7 .text").slideToggle();
+    });
+     $("#image8 .text").click(function () {
+        $("#image8 .text").slideToggle();
+    });
+     $("#image9 .text").click(function () {
+        $("#image9 .text").slideToggle();
+    });
+     $("#image10 .text").click(function () {
+        $("#image10 .text").slideToggle();
+    });  
+
+
+
 });
 
 

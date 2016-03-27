@@ -6,8 +6,10 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Special+Elite' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="static/style.css"/>
+
 </head>
 
 <body>
@@ -15,26 +17,26 @@
 	<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 	<script language="javascript" src="static/jscript.js"></script>
 
+
+	<header>
+		<h1 data-alt='{{title}}'>Snippets</h1>
+		<h2><img src = "static/{{title}}_hw.png" alt = '{{title}}'></h2>
+	</header>
+
+	<input type="checkbox" id="navbar-checkbox" class="navbar-checkbox">
+		<nav class="menu">
+			<ul>
+				<li id="home"><a class="home" href="home" >Home</a></li>
+				<li id="learn"><a class="learn" href="learn">Learn</a></li>
+				<li id="snax"><a class="snax" href="snax">SNAX</a></li>
+				<li id="think"><a class="think" href="think">Think</a></li>
+			</ul>
+		<label for="navbar-checkbox" class="navbar-handle"></label>
+		</nav>
+	</input>
+
 	<div id="wrapper">
-
-		<header>
-			<h1><img src = "static/snippets_hw_clip.png" alt = "Snippet"></h1>
-			<h2>{{title}}</h2>
-		</header>
-
-		<input type="checkbox" id="navbar-checkbox" class="navbar-checkbox">
-			<nav class="menu">
-				<ul>
-					<li><a class="home" href="home" >Home</a></li>
-					<li><a class="learn" href="learn">Learn</a></li>
-					<li><a class="cook" href="cook">SNAX</a></li>
-					<li><a class="think" href="think">Think</a></li>
-				</ul>
-			<label for="navbar-checkbox" class="navbar-handle"></label>
-			</nav>
-		</input>
-
-		<div class="container-fixed">
+		<div class="container-fluid">
 
 					<div class="row">
 						<div id="maincontent" class="col-sm-8">					
@@ -51,8 +53,8 @@
 
 
 				<div class="row">
+					{% block resources%}
 					<div id="resources" class="col-xs-12">
-						{% block resources%}
 						<h3>THIS SHOULD NOT BE VISIBLE</h3>
 						 <div class="dropdown">
 						  <button onclick="myFunction()" class="dropbtn">Resources</button>
@@ -64,8 +66,8 @@
 						 
 						  </div>
 						</div>
-						{% endblock %}
 					</div>
+					{% endblock %}
 				</div>
 
 	  	</div>
@@ -73,8 +75,9 @@
 	</div>
 
 	<footer>
-		<p>&copy; <a class="think" href="think">Ali</a></p>
+		<p><img src="static/drawing{{random}}.png" alt="ink drawing">&copy; <a class="think" href="think">Ali</a></p>
+		<span id="freepik">Coffee vector designed by <a href="http://www.freepik.com/free-photos-vectors/coffee">Freepik</a></span>
 	</footer>
-	
+
 </body>
 </html>
