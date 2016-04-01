@@ -1,7 +1,12 @@
 /***************FONTS***************/
+
 @font-face {
     font-family: 'jrhandregular'; /*font from: https://www.fontsquirrel.com/fonts/Jr-Hand made by TepidMonkey*/
-    src: url('fonts/jrfont/jr.ttf');
+    src: url('fonts/jrha___-webfont.eot');
+    src: url('fonts/jrha___-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/jrha___-webfont.woff') format('woff'),
+         url('fonts/jrha___-webfont.ttf') format('truetype'),
+         url('fonts/jrha___-webfont.svg#jrhandregular') format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -21,6 +26,14 @@ body {
   font-size: 1.8em;
   background-color:rgba(255,255,255,0);
   background-blend-mode: multiply;
+}
+
+@media screen and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+  body { 
+  /* IE10+ CSS styles go here from https://philipnewcomer.net/2014/04/target-internet-explorer-10-11-css/ */
+  font-family: Georgia, 'Times New Roman', Garamond, sans-serif;
+  font-size: 1.5em;
+  }
 }
 
 #wrapper {
@@ -119,6 +132,7 @@ header h2 img {
   background-image: url("macarons_clip.png"); /*photosource: https://www.pexels.com/photo/food-dessert-sweet-macaroons-6747/; from snapwiresnaps.tumblr.com*/
   background-repeat: no-repeat;
   background-size: contain;
+  color: rgba(255,255,255,0);
 }
 
 .navbar-handle {
@@ -127,10 +141,11 @@ header h2 img {
   font-size: 45px;
   padding: 0.6em 0;
   width: 1.8em;
+  color: rgba(255,255,255,0);
 }
 
 .navbar-checkbox {display: none;}
-.menu .navbar-handle {display: block;}
+
 #navbar-checkbox:checked + .menu ul {max-height: 300px;}
 #navbar-checkbox:checked + .menu li {visibility: visible;}
 
